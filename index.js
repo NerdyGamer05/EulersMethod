@@ -1,5 +1,5 @@
 async function calculate(yPrime, xVal, yVal, h, desiredX) {
-  let val = (desiredX - xVal) / 0.1;
+  let val = (desiredX - xVal) / h;
   let x = xVal;
   let num = yVal;
 
@@ -14,7 +14,9 @@ async function calculate(yPrime, xVal, yVal, h, desiredX) {
 
 async function nextStep(equation, x, y, h) {
   let newVal = await math.evaluate(equation.replace(/x/g, "(" + x + ")").replace(/y/g, "(" + y + ")"));
-  return await (y + (h * newVal));
+  console.log(equation.replace(/x/g, "(" + x + ")").replace(/y/g, "(" + y + ")"));
+  console.log("" + y + " + " + " (" + h + " * " + equation.replace(/x/g, "(" + x + ")").replace(/y/g, "(" + y + ")" + ")") + " = **" + (y + (h * newVal) + "**"))
+  return await +(y + (h * newVal)).toFixed(12);
 }
 
 function run() {
