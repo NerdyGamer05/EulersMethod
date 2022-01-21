@@ -1,7 +1,3 @@
-//const math = require('mathjs');
-import math from './math.min.js'
-//X[n] => Y[n-1] + Δx * y'(X[n-1]Y[n-1])
-
 async function calculate(yPrime, xVal, yVal, h, desiredX) {
         let val = (desiredX - xVal) / 0.1;
         let x = xVal;
