@@ -8,7 +8,7 @@ async function calculate(yPrime, xVal, yVal, h, desiredX) {
     if (i === val - 1) { break }
     x = +(x + h).toFixed(12);
   }
-  return "Using Euler's method method to esimate y(" + desiredX + ") is " + num;
+  return "Using Euler's method method to esimate <strong>y(" + desiredX + ")</strong> is <strong>" + num + "</strong>.";
   //return "An error has occured. Please check that you inputted value numbers."
 }
 
